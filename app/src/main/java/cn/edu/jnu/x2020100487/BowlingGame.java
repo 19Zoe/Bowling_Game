@@ -15,9 +15,17 @@ public class BowlingGame {
                 if (isaSpare(scoreIndex)) {
                     totalScore += pins[scoreIndex + 2];
                 }
+                if(isaStrike(scoreIndex)){
+                        totalScore = totalScore+pins[scoreIndex + 1]+pins[scoreIndex + 2];
+                }
             }
         }
         return totalScore;
+    }
+
+    //是一个全中
+    private boolean isaStrike(int scoreIndex) {
+        return 10 == pins[scoreIndex];
     }
 
     //是一个补中

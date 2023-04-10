@@ -55,10 +55,10 @@ public class BowlingGameUnitTest {
     public void test4(){
         repeatedroll(4, 1);
         rollaStrike();
-        game.roll(2);
         game.roll(5);
+        game.roll(3);
         repeatedroll(12, 0);
-        assertEquals(28, game.score());
+        assertEquals(30, game.score());
     }
 
     private void rollaStrike() {
