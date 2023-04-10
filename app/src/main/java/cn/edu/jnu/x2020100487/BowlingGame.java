@@ -1,12 +1,10 @@
 package cn.edu.jnu.x2020100487;
-
 public class BowlingGame {
     int pins[]=new int[21];
     int currentPinIndex=0;
     public void roll(int pin) {
         pins[currentPinIndex++]+=pin;
     }
-
     public int score() {
         int totalScore=0;
         for(int scoreIndex=0;scoreIndex<pins.length;scoreIndex++){
@@ -16,7 +14,7 @@ public class BowlingGame {
                     totalScore += pins[scoreIndex + 2];
                 }
                 if(isaStrike(scoreIndex)){
-                        totalScore = totalScore+pins[scoreIndex + 1]+pins[scoreIndex + 2];
+                    totalScore = totalScore+pins[scoreIndex + 1]+pins[scoreIndex + 2];
                 }
             }
         }
