@@ -44,6 +44,6 @@ public class BowlingGameUnitTest {
         game.roll(5);  //一次补中，第一轮得10+6=16分
         game.roll(6);
         repeatedroll(17, 3);
-        assertEquals(76, game.score());
+        assertEquals(73, game.score());
     }
 }
