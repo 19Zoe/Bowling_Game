@@ -1,22 +1,29 @@
 package cn.edu.jnu.x2020100487;
+
 public class BowlingGame {
     int pins[]=new int[21];
     int currentPinIndex=0;
     public void roll(int pin) {
         pins[currentPinIndex++]+=pin;
     }
+
     public int score() {
         int totalScore=0;
-        for(int scoreIndex=0;scoreIndex<pins.length;scoreIndex++){
-            totalScore+=pins[scoreIndex];
-            if(scoreIndex<19) {
-                if (isaSpare(scoreIndex)) {
-                    totalScore += pins[scoreIndex + 2];
-                }
-                if(isaStrike(scoreIndex)){
-                    totalScore = totalScore+pins[scoreIndex + 1]+pins[scoreIndex + 2];
-                }
+        int currentFrameScoreIndex=0;
+        for(int currentFrame=0;currentFrame<10;currentFrame++){   //按照轮次计分
+            totalScore+=pins[currentFrameScoreIndex];
+            totalScore += pins[currentFrameScoreIndex + 1];
+            if(isaStrike(currentFrameScoreIndex)){
+                totalScore += pins[currentFrameScoreIndex + 2];
             }
+            else if (isaSpare(currentFrameScoreIndex)) {
+                totalScore += pins[currentFrameScoreIndex + 2];
+                currentFrameScoreIndex++;
+            }
+            else{
+                currentFrameScoreIndex++;
+            }
+            currentFrameScoreIndex++;
         }
         return totalScore;
     }
