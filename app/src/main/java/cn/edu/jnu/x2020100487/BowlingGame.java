@@ -11,13 +11,17 @@ public class BowlingGame {
         int totalScore=0;
         for(int scoreIndex=0;scoreIndex<pins.length;scoreIndex++){
             totalScore+=pins[scoreIndex];
-            //如果一个不重，则加上下下一个球的分数
             if(scoreIndex<19) {
-                if (10 == pins[scoreIndex] + pins[scoreIndex + 1]) {
+                if (isaSpare(scoreIndex)) {
                     totalScore += pins[scoreIndex + 2];
                 }
             }
         }
         return totalScore;
+    }
+
+    //是一个补中
+    private boolean isaSpare(int scoreIndex) {
+        return 10 == pins[scoreIndex] + pins[scoreIndex + 1];
     }
 }

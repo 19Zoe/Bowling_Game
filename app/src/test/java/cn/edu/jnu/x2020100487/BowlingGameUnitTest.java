@@ -40,10 +40,28 @@ public class BowlingGameUnitTest {
 
     @Test
     public void test3(){
-        game.roll(5);
-        game.roll(5);  //一次补中，第一轮得10+6=16分
+        rollaSpare();
         game.roll(6);
         repeatedroll(17, 3);
         assertEquals(73, game.score());
+    }
+
+    private void rollaSpare() {
+        game.roll(5);
+        game.roll(5);
+    }
+
+    @Test
+    public void test4(){
+        repeatedroll(4, 1);
+        rollaStrike();
+        game.roll(2);
+        game.roll(5);
+        repeatedroll(12, 0);
+        assertEquals(28, game.score());
+    }
+
+    private void rollaStrike() {
+        game.roll(10);
     }
 }
