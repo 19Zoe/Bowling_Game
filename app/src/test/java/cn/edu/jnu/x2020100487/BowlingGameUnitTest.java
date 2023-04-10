@@ -11,7 +11,11 @@ import static org.junit.Assert.*;
  */
 public class BowlingGameUnitTest {
     @Test
-    public void test1() {
-        assertEquals(4, 2 + 2);
+    public void test20Zeros(){
+        BowlingGame game=new BowlingGame();
+        for(int i=0;i<20;i++){
+            game.roll(0);
+        }
+        assertEquals(0,game.score());
     }
 }
