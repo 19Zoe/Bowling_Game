@@ -31,6 +31,7 @@ public class BowlingGameUnitTest {
         }
     }
 
+    @Test
     public void test2(){
         repeatedroll(10, 3);
         repeatedroll(10, 2);

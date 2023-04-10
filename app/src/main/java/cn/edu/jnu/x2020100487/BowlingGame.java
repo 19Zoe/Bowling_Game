@@ -1,10 +1,12 @@
 package cn.edu.jnu.x2020100487;
 
 public class BowlingGame {
-    public void roll(int i) {
+    int score=0;
+    public void roll(int pin) {
+        score+=pin;
     }
 
     public int score() {
-        return 0;
+        return score;
     }
 }
